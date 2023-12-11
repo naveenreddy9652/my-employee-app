@@ -1,0 +1,30 @@
+*{
+    color: black;
+
+}
+
+table{
+    background-color: rgb(253, 245, 245);
+}
+
+td{
+    font-size: 20px;
+    font-weight: 600;
+    width: 180px;
+}
+
+.green{
+    color: green;
+}
+
+.blue{
+    color: blue;
+}
+
+.yellow{
+    color: yellow;
+}
+
+.red{
+    color: red;
+}

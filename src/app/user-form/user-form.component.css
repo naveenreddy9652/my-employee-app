@@ -1,0 +1,40 @@
+
+h1{
+    text-align: center;
+}
+
+form{
+   padding: 30px;
+}
+
+label{
+    display: inline-block;
+    width: 80px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+input{
+    border: 0px;
+    border-radius: 2px;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+button{
+    background-color: blue;
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    font-weight: 600;
+}
+
+.del{
+    background-color: red;
+}
+
+p{
+    color: red;
+    font-size: 15px;
+}

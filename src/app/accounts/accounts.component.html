@@ -1,0 +1,52 @@
+<div>
+    <input placeholder="search" type="text" [(ngModel)]="name" (keypress)="searchAcounts()">
+    <select title="option" [(ngModel)]="pageNo">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+    </select>
+    <button (click)="pagination()">page</button>
+    <select title="sort" [(ngModel)]="column" >
+        <option>account_name</option>
+        <option>available_balance</option>
+    </select>
+
+    <select title="sort" [(ngModel)]="order" >
+        <option>asc</option>
+        <option>desc</option>
+    </select>
+    <button (click)="sort()">sort</button>
+
+</div>
+
+<table class="bottom">
+    <thead>
+        <tr>
+            <th>Account Name</th>
+            <th>Balance</th>
+            <th>Account Number</th>
+            <th>City</th>
+            <th>Image</th>
+            <th>Id</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of accounts let i=index">
+            <td>{{account.account_name}}</td>
+            <td>{{account.available_balance}}</td>
+            <td>{{account.account_number}}</td>
+            <td>{{account.city}}</td>
+            
+            <td>
+                <img src="{{account.profie_picture}}" alt="">
+            </td>
+            <td>{{account.id}}</td>
+            <td><button (click)="delete(account.id)">delete</button></td>
+
+        </tr>
+
+    </tbody>
+
+</table>

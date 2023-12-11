@@ -1,0 +1,19 @@
+<div class="parent">
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th class="title">Title</th>
+                <th>User Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let email of emails" >
+                <td>{{email.id}}</td>
+                <td [ngClass]="{'black':email.completed === true, 'gray': email.completed === false}">{{email.title}}</td>
+                <td [ngClass]="{'black':email.completed === true, 'gray': email.completed === false}">{{email.userId}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

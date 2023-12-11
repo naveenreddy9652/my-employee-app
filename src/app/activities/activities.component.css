@@ -1,0 +1,109 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.parent{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(1, 12, 12);
+    text-align: center;
+}
+
+.child{
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+h1{
+    background-color: blue;
+    text-align: center;
+    padding: 10px;
+}
+
+.activity{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.activity-name{
+    color: rgb(4, 248, 248);
+    
+}
+
+.child div{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px;
+    height: 120px;
+    text-align: left;
+    
+}
+
+.child div p{
+    font-size: 25px;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 20px;
+}
+
+.child div a{
+    font-size: 30px;
+    font-weight: 600;
+    width: 70%;
+    margin-top: 20px;
+    text-align: center;
+    display: inline-block;
+    background-color: blue;
+    border-radius: 5px;
+    width: 350px;
+    padding: 5px;
+    text-decoration: none;
+    color: wheat;
+}
+
+.type{
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(4, 248, 248);
+
+}
+
+.participants{
+    color: rgb(20, 27, 220);
+}
+
+.price{
+    color: rgb(20, 27, 220);
+}
+
+#link{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: orangered;
+    padding: 10px;
+    font-size: 25px;
+    color: #fff;
+    border: 0px;
+    border-radius: 8px;
+    font-weight: 600;
+
+}
+
+button:hover{
+    background-color: black;
+    cursor: pointer;
+}

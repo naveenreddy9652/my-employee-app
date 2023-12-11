@@ -1,0 +1,21 @@
+<div class="parent">
+  <h1>Activity</h1>
+  <div class="child">
+    <div>
+     <p class="activity">Activity: <span class="activity-name">&nbsp;{{activities.activity}}</span></p>
+     <p>activities Type: <span class="type">&nbsp;{{activities.type}}</span></p>
+    </div>
+     <div>
+        <p>Participants: <span class="participants">&nbsp;{{activities.participants}}</span></p>
+        <p>Price: <span class="price"> &nbsp;&dollar;{{activities.price}}</span></p>
+     </div>
+     <div>
+        <p>Key: <span class="price">&nbsp;{{activities.key}}</span></p>
+        <p>Accesability : <span class="price">&nbsp;{{activities.accessibility}}</span></p>             
+     </div>
+     <div id="link">
+        <a target="_blank" href="{{activities.link}}">Participation Link</a>
+     </div>
+  </div>
+  <button (click)="refresh()">Refresh</button>
+</div>

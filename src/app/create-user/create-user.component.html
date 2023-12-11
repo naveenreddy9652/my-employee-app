@@ -1,0 +1,65 @@
+<h1>Create User</h1>
+
+<form action="" [formGroup]="userForm">
+
+    <label for="">Name</label>
+    <input type="text" name="" id="" placeholder="name" formControlName="name" >
+    <br>
+    <label for="">Phone</label>
+    <input type="text" name="" id="" placeholder="phone number" formControlName="phone">
+    <br>
+    <label for="">City</label>
+    <input type="text" name="" id="" placeholder="city" formControlName="city">
+    <br>
+    <label for="">Image</label>
+    <input type="text" name="" id="" placeholder="image" formControlName="image">
+    <br>
+    <button type="button" (click)="submit()">submit</button>
+
+</form>
+
+<form action="" [formGroup]="vahicleGroup">
+
+    <label for="">Vahicle Name</label>
+    <input type="text" name="" id="" placeholder="name" formControlName="Vahicle" >
+    <br>
+    <label for="">Manufacturers</label>
+    <input type="text" name="" id="" placeholder="phone number" formControlName="manufacturer">
+    <br>
+    <label for="">Model</label>
+    <input type="text" name="" id="" placeholder="city" formControlName="model">
+    <br>
+    <label for="">Type</label>
+    <input type="text" name="" id="" placeholder="Type" formControlName="type">
+    <br>
+    <label for="">Image</label>
+    <input type="text" name="" id="" placeholder="image" formControlName="image">
+    <br>
+    <label for="">Color</label>
+    <input type="text" name="" id="" placeholder="image" formControlName="image">
+    <br>
+    <button type="button" (click)="createVahicle()">submit</button>
+
+</form>
+
+<form action="" [formGroup]="accountGroup">
+
+    <label for="">Account Name</label>
+    <input type="text" name="" id="" placeholder="name" formControlName="account_name" >
+    <br>
+    <label for="">Balance</label>
+    <input type="text" name="" id="" placeholder="phone number" formControlName="available_balance">
+    <br>
+    <label for="">Account Number</label>
+    <input type="text" name="" id="" placeholder="city" formControlName="account_number">
+    <br>
+    <label for="">City</label>
+    <input type="text" name="" id="" placeholder="Type" formControlName="city">
+    <br>
+    <label for="">Image</label>
+    <input type="text" name="" id="" placeholder="image" formControlName="profie_picture">
+    <br>
+
+    <button type="button" (click)="createAccount()">submit</button>
+
+</form>

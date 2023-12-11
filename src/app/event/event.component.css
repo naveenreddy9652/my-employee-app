@@ -1,0 +1,22 @@
+div{
+    padding: 50px;
+}
+
+input{
+    height: 30px;
+    box-sizing: border-box;
+}
+
+button{
+    height: 30px;
+    background-color: yellow;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+.delete{
+    height: 30px;
+    background-color: red;
+    border: 0px;
+    box-sizing: border-box; 
+}

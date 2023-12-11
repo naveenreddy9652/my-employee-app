@@ -1,0 +1,163 @@
+<h2>User Information</h2>
+<div *ngFor="let user of userInfo" class="parent">
+    <a href=""></a>
+    <div class="user">
+        <div class="left">
+            <table class="right">
+                <img src="{{user.image}}" alt="" height="100px" width="100px">
+               
+                <tr>
+                    <td>
+                        <p class="caption">Personnel Detils</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="key">Full Name:</span> <span>{{user.firstName}} {{user.maidenName}}
+                            {{user.lastName}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="key"> Age:</span> <span>{{user.age}}</span></td>
+                </tr>
+
+                <tr>
+                    <td><span class="key">Gender:</span> <span>{{user.ender}}</span></td>
+                </tr>
+
+                <tr>
+                    <td><span class="key">Email: </span> <span>{{user.email}}</span></td>
+                </tr>
+
+                <tr>
+                    <td><span class="key"> Phone Nubmer:</span> <span>{{user.phone}}</span></td>
+
+                </tr>
+                <tr>
+                    <td><span class="key">User Name: </span> <span>{{user.username}}</span></td>
+
+                </tr>
+                <tr>
+                    <td><span class="key">Password:</span> <span>{{user.password}}</span></td>
+
+                </tr>
+
+                <tr>
+                    <td><span class="key">DOB: </span> <span>{{user.age}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="key">Blood Group:</span><span>{{user.bloodGroup}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="key">Height:</span><span>{{user.height}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="key">Wight:</span><span>{{user.weight}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="key">Eye Color:</span><span>{{user.eyeColor}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="key">Hair Color:</span><span>{{user.hair.color}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="key">Hair Type:</span><span>{{user.hair.type}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="key">Person Id:</span><span>{{user.id}}</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="caption">Bank Details</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="address"><span class="key"> Card Number</span>
+                <tr>
+                    <td class="address-info"><i>{{user.bank.cardNumber}}, </i>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="key">Card type:</span><span>{{user.bank.cardType}}</span> <span
+                            class="key">Expairy d:</span><span>{{user.bank.cardExpire}}</span></td>
+                </tr>
+         
+            </table>
+            <div class="right2">
+                <table>
+                    <tr>
+                        <td>
+                            <p class="caption">Company Details</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Department:</span><span>{{user.company.department}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="key"> Company Name</span> <span>{{user.company.name}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="key"> Designation</span> <span>{{user.company.title}}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="address"><span class="key"> Address</span>
+                    <tr>
+                        <td class="address-info"><i>{{user.company.address.address}}, </i>
+                            <i>{{user.company.address.city}},</i>
+                            <i>{{user.company.address.postalCode}},</i>
+                            <i>{{user.company.address.state}}.</i>
+                        </td>
+                    </tr>
+
+                    </td>
+
+                    </tr>
+                    <tr>
+                        <td class="address"><span class="key"> Coardinates</span>
+                    <tr>
+                        <td class="address-info coard"><b>Latitude</b>&nbsp; <i>{{user.company.address.coordinates.lat}}
+                            </i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="address-info coard"><b>Langitude</b> &nbsp;
+                            <i>{{user.company.address.coordinates.lng}} </i>
+                        </td>
+                    </tr>
+
+                    </td>
+
+                    </tr>
+
+
+                </table>
+                <table>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <p class="caption">Other Details</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="key"> Domain:</span> <span>{{user.domain}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="key"> IP Address:</span> <span>{{user.ip}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="key"> Mack Address:</span> <span>{{user.macAddress}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="key"> University:</span> <span>{{user.university}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="key"> User Agent:</span> <span>{{user.userAgent}}</span></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

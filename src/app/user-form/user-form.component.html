@@ -1,0 +1,107 @@
+<h1>User Form</h1>
+<form action="" [formGroup]="userForm">
+    <label for="">Name:</label>
+    <input type="text" placeholder="name" name="" id="" formControlName="name">
+    <div *ngIf="userForm.get('name')?.touched || userForm.get('name')?.dirty">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">Name is Requred</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength']">Min 5 chars required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['maxlength']">Max lenght 10 chars allowed</p>
+    </div>
+    <br>
+
+    <label for="">Age:</label>
+    <input type="number" placeholder="age" name="" id="" formControlName="age">
+    <div *ngIf="userForm.get('age')?.touched || userForm.get('age')?.dirty">
+        <p *ngIf="userForm.get('age')?.errors?.['required']">Age is required</p>
+        <p *ngIf="userForm.get('age')?.errors?.['min']">Min 0 </p>
+        <p *ngIf="userForm.get('age')?.errors?.['max']">Max 100</p>
+    </div>
+    
+    <br>
+
+    <label for="">Phone:</label>
+    <input type="number" placeholder="phone" name="" id="" formControlName="phone">
+    <div *ngIf="userForm.get('phone')?.touched || userForm.get('phone')?.dirty">
+        <p *ngIf="userForm.get('phone')?.errors?.['required']">phone number is required</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['min']">Min 10 numbers required </p>
+        <p *ngIf="userForm.get('phone')?.errors?.['max']">Max 100 numbers allowed</p>
+    </div>
+    <br>
+
+    <label for="">Email:</label>
+    <input type="email" placeholder="email" name="" id="" formControlName="email">
+    <div *ngIf="userForm.get('email')?.touched || userForm.get('email')?.dirty">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">Eamil is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['email']">Invalid emial</p>
+
+    </div>
+    <br>
+
+    <div formGroupName="address">
+        <label for="">City:</label>
+        <input type="text" placeholder="city" name="" id="" formControlName="city">
+
+        <br>
+        <label for="">Pincode:</label>
+        <input type="number" placeholder="pincode" name="" id="" formControlName="pincode">
+        <div *ngIf="userForm.get('address')?.get('pincode')?.touched || userForm.get('address')?.get('pincode')?.dirty">
+            <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['required']">Pincode is required</p>
+            <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['min']">Min 5 numbers required</p>
+            <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['max']">Min 5 numbers required</p>
+
+         </div>
+        <br>
+    </div>
+
+    <button type="button" (click)="add()">Add Card</button>
+
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls; let i = index">
+            <div formGroupName="{{i}}">
+                <label for="">No:</label>
+                <input type="number" placeholder="No" name="" id="" formControlName="no">
+                <br>
+
+                <label for="">Expairy:</label>
+                <input type="month" placeholder="Expairy" name="" id="" formControlName="month">
+                <br>
+
+                <label for="">CVV:</label>
+                <input type="number" placeholder="cvv" name="" id="" formControlName="cvv">
+                <div *ngIf="cardsFormArray.controls[i]?.get('cvv')?.touched || cardsFormArray.controls[i]?.get('cvv')?.dirty">
+                    <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['required']">CVV is required</p>
+                </div>
+                <br>
+
+                <button type="button" class="del" (click)="delete(i)">delete</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+    <label for="">Student Type</label>
+    <input placeholder="none" type="radio" formControlName="type" value="dayscolor">
+    <label for="">Day Scolor</label>
+    <input placeholder="none" type="radio" formControlName="type" value="residential">
+    <label for="">Residential</label>
+    
+    <div *ngIf="userForm.get('type')?.value === 'dayscolor'">
+        <label for="">Bus Fee:</label>
+        <input type="number" placeholder="busFee" name="" id="" formControlName="busFee">
+        <br>
+    </div>
+
+    <div *ngIf="userForm.get('type')?.value === 'residential'">
+        <label for="">Hostel Fee:</label>
+        <input type="number" placeholder="hostelFee" name="" id="" formControlName="hostelFee">
+        <br>
+    
+    </div>
+    <br>
+
+    <button type="button" (click)="submit()">submit</button>
+
+
+</form>

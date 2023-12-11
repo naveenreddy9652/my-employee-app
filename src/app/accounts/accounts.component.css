@@ -1,0 +1,19 @@
+.bottom{
+    background-color: rgb(45, 2, 2);
+    width: 100%;
+}
+
+.bottom th{
+    text-align: center;
+    width: 320px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid gray;
+    padding: 15px;
+}
+
+.bottom td{
+    text-align: center;
+    width: 20px;
+    margin-bottom: 15px;
+    padding: 15px;
+}

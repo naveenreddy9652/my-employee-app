@@ -1,0 +1,150 @@
+<div class="parent">
+    <h1>Student Form</h1>
+    <form action="" [formGroup]="studentForm">
+        <label for="">Name</label>
+        <input type="text" placeholder="name" formControlName="name">
+        <div *ngIf="studentForm.get('name')?.touched || studentForm.get('name')?.dirty">
+            <p *ngIf="studentForm.get('name')?.errors?.['required']">Name is required</p>
+            <p *ngIf="studentForm.get('name')?.errors?.['minlength']">min 5 chars required</p>
+            <p *ngIf="studentForm.get('name')?.errors?.['maxlength']">max 10 chars allowed</p>
+        </div>
+        <br>
+
+        <label for="">Class</label>
+        <input type="number" placeholder="class" formControlName="class">
+        <div *ngIf="studentForm.get('class')?.touched || studentForm.get('class')?.dirty">
+            <p *ngIf="studentForm.get('class')?.errors?.['required']">Class is required</p>
+        </div>
+        <br>
+
+        <label for="">Father's Name</label>
+        <input type="text" placeholder="father's Name" formControlName="fathersName">
+        <div *ngIf="studentForm.get('fathersName')?.touched || studentForm.get('fathersName')?.dirty">
+            <p *ngIf="studentForm.get('fathersName')?.errors?.['required']">fathersName is required</p>
+            <p *ngIf="studentForm.get('fathersName')?.errors?.['minlength']">min 5 chars required</p>
+            <p *ngIf="studentForm.get('fathersName')?.errors?.['maxlength']">max 10 chars allowed</p>
+        </div>
+        <br>
+
+        <label for="">Email</label>
+        <input type="email" placeholder="Email" formControlName="email">
+        <div *ngIf="studentForm.get('email')?.touched || studentForm.get('email')?.dirty">
+            <p *ngIf="studentForm.get('email')?.errors?.['required']">Email is required</p>
+            <p *ngIf="studentForm.get('email')?.errors?.['email']">Invalid Email</p>
+
+        </div>
+        <br>
+
+        <label for="">Date of birth</label>
+        <input type="date" placeholder="father's Name" formControlName="dataOfBirth">
+        <br>
+
+        <div formGroupName="address">
+            <div>
+                <label for="">Address Lane</label>
+                <input type="text" placeholder="address lane" formControlName="addressLane">
+                <div
+                    *ngIf="studentForm.get('address')?.get('addressLane')?.touched || studentForm.get('address')?.get('addressLane')?.dirty">
+                    <p *ngIf="studentForm.get('address')?.get('addressLane')?.errors?.['required']">AddressLane is
+                        required</p>
+                </div>
+                <br>
+            </div>
+
+
+            <label for="">City</label>
+            <input type="text" placeholder="city" formControlName="city">
+            <div
+                *ngIf="studentForm.get('address')?.get('city')?.touched || studentForm.get('address')?.get('city')?.dirty">
+                <p *ngIf="studentForm.get('address')?.get('city')?.errors?.['required']">City is required</p>
+            </div>
+            <br>
+
+            <label for="">State</label>
+            <input type="text" placeholder="state" formControlName="state">
+            <div
+                *ngIf="studentForm.get('address')?.get('state')?.touched || studentForm.get('address')?.get('state')?.dirty">
+                <p *ngIf="studentForm.get('address')?.get('state')?.errors?.['required']">City is required</p>
+            </div>
+            <br>
+
+            <label for="">Pincode</label>
+            <input type="number" placeholder="pincode" formControlName="pincode">
+            <div *ngIf="studentForm.get('address')?.get('pincode')?.touched || studentForm.get('pincode')?.dirty">
+                <p *ngIf="studentForm.get('address')?.get('pincode')?.errors?.['required']">Pincode is required</p>
+                <p *ngIf="studentForm.get('address')?.get('pincode')?.errors?.['min']">Pincode is required</p>
+                <p *ngIf="studentForm.get('address')?.get('pincode')?.errors?.['max']">Pincode is required</p>
+            </div>
+            <br>
+
+        </div>
+        <button (click)="add()">add marks</button>
+
+        <div formArrayName="marks">
+            <div *ngFor="let marks of marksFormArray.controls; let i=index">
+                <div formGroupName="{{i}}">
+                    <label for="">Class </label>
+                    <input type="number" placeholder="class" formControlName="className">
+                    <div
+                        *ngIf="marksFormArray.controls[i]?.get('className')?.touched || marksFormArray.controls[i]?.get('className')?.dirty">
+                        <p *ngIf="marksFormArray.controls[i]?.get('className')?.errors?.['required']">class is required
+                        </p>
+                        <p *ngIf="marksFormArray.controls[i]?.get('className')?.errors?.['min']">min 1 is required</p>
+                        <p *ngIf="marksFormArray.controls[i]?.get('className')?.errors?.['max']">max 9 is allowed</p>
+                    </div>
+                    <br>
+
+                    <label for="">Year </label>
+                    <input type="month" placeholder="class" formControlName="year">
+
+                    <br>
+
+                    <label for="">Percentage </label>
+                    <input type="number" placeholder="percentage" formControlName="percentage">
+                    <div
+                        *ngIf="marksFormArray.controls[i]?.get('percentage')?.touched || marksFormArray.controls[i]?.get('percentage')?.dirty">
+                        <p *ngIf="marksFormArray.controls[i]?.get('percentage')?.errors?.['required']">class is required
+                        </p>
+                        <p *ngIf="marksFormArray.controls[i]?.get('percentage')?.errors?.['min']">min 1 is required</p>
+                        <p *ngIf="marksFormArray.controls[i]?.get('percentage')?.errors?.['max']">max 9 is allowed</p>
+                    </div>
+                    <br>
+
+                    <button type="button" class="del" (click)="delete(i)">delete</button>
+                </div>
+            </div>
+        </div>
+
+        <label for="">Student Type</label>
+        <input type="radio" placeholder="std" name="type" value="dayScolor" formControlName="type">
+        <label for="">Day Sccolor</label>
+        <input type="radio" placeholder="std" name="type" value="residential" formControlName="type">
+        <label for="">Residential</label>
+        <br>
+        <div *ngIf="studentForm.get('type')?.value === 'dayScolor'">
+            <label for="">Bus Fee</label>
+            <input type="number" placeholder="std" formControlName="dayScolor">
+            <div *ngIf="studentForm.get('dayScolor')?.touched || studentForm.get('dayScolor')?.dirty">
+                <p *ngIf="studentForm.get('dayScolor')?.errors?.['required']">dayScolor is required</p>
+
+            </div>
+            <br>
+        </div>
+
+        <div *ngIf="studentForm.get('type')?.value === 'residential'">
+            <label for="">Hoste Fee</label>
+            <input type="number" placeholder="std" formControlName="residential">
+            <div *ngIf="studentForm.get('residential')?.touched || studentForm.get('residential')?.dirty">
+                <p *ngIf="studentForm.get('residential')?.errors?.['required']">Residential is required</p>
+
+            </div>
+            <br>
+        </div>
+
+
+
+
+
+        <button type="button" (click)="submit()">submit</button>
+    </form>
+</div>

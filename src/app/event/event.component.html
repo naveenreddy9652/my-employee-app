@@ -1,0 +1,16 @@
+
+<div>
+    <h2>Event Resgistrationn</h2>
+
+    <input placeholder="enter name" type="text" name="" id="" [(ngModel)]="userName">
+    
+    <button (click)="submit()">Submit</button>
+    
+    <h1>Resgistration Users</h1>
+    
+    <ol>
+        <li *ngFor="let user of users">{{user}}</li>
+    </ol>
+    
+    <button type="button" class="delete" *ngIf="users.length>0" (click)="delete()">delete</button>
+</div>

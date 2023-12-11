@@ -1,0 +1,82 @@
+<div class="top">
+    <div class="top-left">
+        <div>
+            <input placeholder="search" class="search" type="text" (keyup)="searchProduct()" name="" id="search" [(ngModel)]="searchItem">
+            <button (click)="onlyFreeDelivery()">only Free Delivery</button>
+        </div>
+        <div class="price-btns">
+            <button (click)="priceLowToHigh()">price low to high</button>
+            <button (click)="priceHighToLow()">price high to low</button>
+            <button (click)="ratingLowToHigh()">rating low to high</button>
+            <button (click)="ratingHighToLow()">rating high to low</button>
+
+        </div>
+        <div class="discount-btn">
+            <button (click)="apply50Off()">Applay 50% Discount</button>
+            <button (click)="pricewithDeliveryCharges()">price with delivery Charges</button>
+
+        </div>
+        <div class="last-btn">
+            <button (click)="TotalPrice()">Total Price</button>
+            <button (click)="TotalCarts()">Total cart Items</button>
+
+        </div>
+        <h4 class="cart" *ngIf="priceValue">Total Price is: {{totalPrice}}</h4>
+        <h4 class="cart" *ngIf="value">Total Cart Items is: {{totalItems}}</h4>
+    </div>
+    <div class="top-right">
+        <table>
+            <tbody>
+                <tr>
+                    <td> <label for="">Name:</label></td>
+                    <td><input placeholder="product name"  [(ngModel)]="name" type="text" id="name" ></td>
+                </tr>
+                <tr>
+                    <td> <label for="">Price:</label></td>
+                    <td><input placeholder="enter price"  [(ngModel)]="price" type="number" id="price"></td>
+                </tr>
+                <tr>
+                    <td> <label for="">Rating:</label></td>
+                    <td><input placeholder="give rating"  [(ngModel)]="rating" type="number" id="rating"></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <p class="dlr">Free Delivery Charge</p>
+        <label for="yes" class="label">Yes</label>
+        <input placeholder="delivery" class="delivery" type="radio" name="delivery" id="yes" value="yes"
+            [(ngModel)]="delivery">
+        <label for="no" class="label">No</label>
+        <input placeholder="delivery" class="delivery" type="radio" name="delivery" id="no" value="no"
+            [(ngModel)]="delivery">
+
+        <button (click)="addToCart()">Add To Cart</button>
+
+    </div>
+</div>
+<table class="bottom">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Free Delivery</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products let i=index">
+            <td>{{i+1}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.rating}}</td>
+            <td>{{product.freeDelivery}}</td>
+            <td>
+                <button (click)="deleteProduct(i)">delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>

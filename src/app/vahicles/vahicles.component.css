@@ -1,0 +1,30 @@
+.bottom{
+    background-color: black;
+    width: 100%;
+}
+
+.bottom th{
+    text-align: center;
+    width: 320px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    padding: 25px;
+    font-size: 20px;
+}
+
+.bottom td{
+    text-align: center;
+    width: 20px;
+    margin-bottom: 15px;
+    padding: 20px;
+    font-size: 18px;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    font-weight: 600;
+}
+
+img{
+    height: 150px;
+    width: 150px;
+}

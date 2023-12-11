@@ -1,0 +1,57 @@
+<div>
+   <input type="text" [(ngModel)]="term" (keypress)="filterdVahicles()" placeholder="serch">
+   <select title="page" [(ngModel)]="pageNO">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+   </select>
+   <button (click)="page()">Page</button>
+
+   <select title="sort" [(ngModel)]="column">
+      <option>Vehicle</option>
+      <option>model</option>
+   </select>
+   <select title="sort" [(ngModel)]="order">
+      <option>asc</option>
+      <option>desc</option>
+    </select>
+    <button (click)="sort()">sort</button>
+
+</div>
+<table class="bottom">
+   <thead>
+      <tr>
+         <th>Image</th>
+         <th>Vahicle Name</th>
+         <th>Manufacturer</th>
+         <th>Model</th>
+         <th>Type</th>
+         <th>Fuel</th>
+         <th>Color</th>
+         <th>Id</th>
+         <th>Action</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr *ngFor="let vahicle of vahicles let i=index">
+         <td>
+            <img src="{{vahicle.image}}" alt="">
+         </td>
+         <td>{{vahicle.Vehicle}}</td>
+         <td>{{vahicle.manufacturer}}</td>
+         <td>{{vahicle.model}}</td>
+         <td>{{vahicle.type}}</td>
+         <td>{{vahicle.fuel}}</td>
+         <td>{{vahicle.color}}</td>
+         <td>{{vahicle.id}}</td>
+         <td>
+            <button (click)="delete(vahicle.id)">delete</button>
+         </td>
+
+      </tr>
+
+   </tbody>
+
+</table>

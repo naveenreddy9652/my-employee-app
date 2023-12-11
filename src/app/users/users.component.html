@@ -1,0 +1,59 @@
+<div class="search">
+    <label for="">Filter</label>
+    <input type="text" name="" id="" placeholder="search" (keypress)="getFilterdUsers()" [(ngModel)]="term">
+    <select title="col" id="" [(ngModel)]="column">
+        <option>fee</option>
+        <option>name</option>
+    </select>
+    <select title="ord" id="" [(ngModel)]="order">
+        <option>asc</option>
+        <option>desc</option>
+    </select>
+    <button (click)="sort()">sort</button>
+
+    <select title="page" [(ngModel)]="pageNo">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+    </select>
+    <button (click)="page()">page</button>
+</div>
+
+<table class="bottom">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Image</th>
+            <th>Fee</th>
+            <th>Id</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users let i=index">
+            <td>{{user.name}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.city}}</td>
+            <td>{{user.fee | price}}</td>
+            <td>
+                <img src="{{user.image}}" alt="">
+            </td>
+            <td>{{user.id}}</td>
+            <td>
+                <button (click)="delete(user.id)">delete</button>
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
