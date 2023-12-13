@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -14,7 +15,7 @@ export class UsersComponent {
    public pageNo:number = 0
 
 
-  constructor(private _userService:UserService){
+  constructor(private _userService:UserService,private _router:Router){
      _userService.getUser().subscribe(
       (data:any) =>{
        this.users = data
@@ -71,5 +72,13 @@ export class UsersComponent {
          
       }
    )
+  }
+
+  view(id:number){
+   this._router.navigateByUrl('/dashboard/user-details/'+id)
+  }
+
+  edit(id:number){
+   this._router.navigateByUrl('/dashboard/edit-user/'+id)
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AccountService } from '../account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accounts',
@@ -13,7 +14,7 @@ export class AccountsComponent {
   public column:string = '';
   public order:string = '';
 
-   constructor(private _accounts:AccountService) {
+   constructor(private _accounts:AccountService, private _router:Router) {
     _accounts.getUser().subscribe(
       (data:any)=>{
        this.accounts = data
@@ -73,6 +74,12 @@ export class AccountsComponent {
     )
    }
 
+   edit(id:any){
+    this._router.navigateByUrl("/dashboard/edit-account/"+id)
+   }
 
+   view(id:any){
+    this._router.navigateByUrl("/dashboard/account-details/"+id)
+   }
 
 }

@@ -7,30 +7,39 @@ import { Observable } from 'rxjs';
 })
 export class VahicleService {
 
-  private baseUrl:string = 'https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction'
+  private baseUrl: string = 'https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction'
 
-  constructor(private _httpClient:HttpClient) { }
-  getVahicle():Observable<any>{
-      return this._httpClient.get(this.baseUrl);
-    }
-  getFilterVahicles(term:string):Observable<any>{
-    return this._httpClient.get(this.baseUrl+'?filter='+term);
+  constructor(private _httpClient: HttpClient) { }
+  getVahicle(): Observable<any> {
+    return this._httpClient.get(this.baseUrl);
   }
 
-  getPages(pageNO:string):Observable<any>{
-    return this._httpClient.get(this.baseUrl+'?limit=10&page='+pageNO);
+  getVahicleDeatails(id:number):Observable<any>{
+    return this._httpClient.get(this.baseUrl+'/'+id);
   }
 
-  sortedVahicles(column:string, order:string):Observable<any>{
-    return this._httpClient.get(this.baseUrl+'?sortBy='+column+'&order='+order)
+  getFilterVahicles(term: string): Observable<any> {
+    return this._httpClient.get(this.baseUrl + '?filter=' + term);
   }
 
-  deleteVahicle(id:string):Observable<any>{
-    return this._httpClient.delete(this.baseUrl+'/'+id)
+  getPages(pageNO: string): Observable<any> {
+    return this._httpClient.get(this.baseUrl + '?limit=10&page=' + pageNO);
   }
 
-  createvahicle(vahicle:any):Observable<any>{
-    return this._httpClient.post(this.baseUrl,vahicle)
+  sortedVahicles(column: string, order: string): Observable<any> {
+    return this._httpClient.get(this.baseUrl + '?sortBy=' + column + '&order=' + order)
+  }
+
+  deleteVahicle(id: string): Observable<any> {
+    return this._httpClient.delete(this.baseUrl + '/' + id)
+  }
+
+  createvahicle(vahicle: any): Observable<any> {
+    return this._httpClient.post(this.baseUrl, vahicle)
+  }
+
+  editVahicle(id:any, data:any):Observable<any>{
+    return this._httpClient.put(this.baseUrl+'/'+id,data)
   }
 
 }

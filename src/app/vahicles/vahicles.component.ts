@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { VahicleService } from '../vahicle.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-vahicles',
@@ -13,8 +14,10 @@ export class VahiclesComponent {
   public column:string = '';
   public order:string = '';
 
+  public id:any = '';
 
-  constructor(private _userService:VahicleService){
+
+  constructor(private _userService:VahicleService, private _router:Router){
      _userService.getVahicle().subscribe(
       (data:any)=>{
          this.vahicles = data
@@ -23,7 +26,12 @@ export class VahiclesComponent {
         alert("Internal Server Error")
       }
      )
+
+   
   }
+
+
+
 
   filterdVahicles(){
     this._userService.getFilterVahicles(this.term).subscribe(
@@ -69,6 +77,14 @@ export class VahiclesComponent {
 
        }
     )
+  }
+
+  edit(id:number){
+    this._router.navigateByUrl("/dashboard/edit-vahicle/"+id);
+  }
+
+  view(id:number){
+    this._router.navigateByUrl("/dashboard/vahicle-details/"+id);
   }
 
 }

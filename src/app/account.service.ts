@@ -15,6 +15,10 @@ export class AccountService {
     return this._httpClient.get(this.baseUrl)
   }
 
+  getAccounnt(id:number):Observable<any>{
+    return this._httpClient.get(this.baseUrl+'/'+id)
+  }
+
   getFilter(name:string):Observable<any>{
     return this._httpClient.get(this.baseUrl+"?filter="+name)
   }
@@ -34,6 +38,9 @@ export class AccountService {
     return this._httpClient.post(this.baseUrl,account)
   }
 
+  editeAccount(id:any,data:any):Observable<any>{
+    return this._httpClient.put(this.baseUrl + '/' + id,data)
+  }
 
 
 }

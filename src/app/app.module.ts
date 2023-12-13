@@ -24,6 +24,9 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { PricePipe } from './price.pipe';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { VahicleDetailsComponent } from './vahicle-details/vahicle-details.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { PricePipe } from './price.pipe';
     UserFormComponent,
     StudentFormComponent,
     PricePipe,
+    UserDetailsComponent,
+    VahicleDetailsComponent,
+    AccountDetailsComponent,
     
     
   ],

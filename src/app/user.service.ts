@@ -15,6 +15,10 @@ export class UserService {
       return this._httpClient.get(this.baseUrl)
     }
 
+    getUserDetails(id:number):Observable<any>{
+      return this._httpClient.get(this.baseUrl+'/'+id)
+    }
+
     getFilter(name:string):Observable<any>{
       return this._httpClient.get(this.baseUrl+'filter='+name)
     }
@@ -32,6 +36,10 @@ export class UserService {
     }
     createUser(data:any):Observable<any>{
       return this._httpClient.post(this.baseUrl+'/',data)
+    }
+
+    editUser(data:any, id:any):Observable<any>{
+      return this._httpClient.put(this.baseUrl+'/'+id,data)
     }
  
 }

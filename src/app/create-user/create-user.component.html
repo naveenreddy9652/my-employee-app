@@ -1,4 +1,6 @@
-<h1>Create User</h1>
+<!-- <h1 *ngIf="!id">Create User</h1>
+<h1 *ngIf="id">Edit User</h1>
+
 
 <form action="" [formGroup]="userForm">
 
@@ -18,10 +20,13 @@
 
 </form>
 
+<h1 *ngIf="!id">Create Vahicle</h1>
+<h1 *ngIf="id">Edit Vahicle</h1>
+
 <form action="" [formGroup]="vahicleGroup">
 
     <label for="">Vahicle Name</label>
-    <input type="text" name="" id="" placeholder="name" formControlName="Vahicle" >
+    <input type="text" name="" id="" placeholder="name" formControlName="Vehicle" >
     <br>
     <label for="">Manufacturers</label>
     <input type="text" name="" id="" placeholder="phone number" formControlName="manufacturer">
@@ -36,11 +41,15 @@
     <input type="text" name="" id="" placeholder="image" formControlName="image">
     <br>
     <label for="">Color</label>
-    <input type="text" name="" id="" placeholder="image" formControlName="image">
+    <input type="text" name="" id="" placeholder="image" formControlName="color">
     <br>
     <button type="button" (click)="createVahicle()">submit</button>
 
-</form>
+</form>  -->
+
+ <h1 *ngIf="!id">Create Account</h1>
+<h1 *ngIf="id">Edit Account</h1>
+
 
 <form action="" [formGroup]="accountGroup">
 
@@ -62,4 +71,4 @@
 
     <button type="button" (click)="createAccount()">submit</button>
 
-</form>
+</form> 

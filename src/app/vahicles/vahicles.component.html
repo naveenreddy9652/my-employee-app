@@ -47,7 +47,9 @@
          <td>{{vahicle.color}}</td>
          <td>{{vahicle.id}}</td>
          <td>
-            <button (click)="delete(vahicle.id)">delete</button>
+            <button class="btn btn-primary" (click)="edit(vahicle.id)">edit</button>
+            <button class="btn btn-warning" (click)="view(vahicle.id)">view</button>
+            <button class="btn btn-danger" (click)="delete(vahicle.id)">delete</button>
          </td>
 
       </tr>

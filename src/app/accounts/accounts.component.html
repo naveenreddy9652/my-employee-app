@@ -34,6 +34,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let account of accounts let i=index">
+            
             <td>{{account.account_name}}</td>
             <td>{{account.available_balance | price}}</td>
             <td>{{account.account_number}}</td>
@@ -43,7 +44,12 @@
                 <img src="{{account.profie_picture}}" alt="">
             </td>
             <td>{{account.id}}</td>
-            <td><button (click)="delete(account.id)">delete</button></td>
+            <td>
+                <button (click)="edit(account.id)">edit</button>
+                <button (click)="view(account.id)">view</button>
+                <button (click)="delete(account.id)">delete</button>
+
+            </td>
 
         </tr>
 
