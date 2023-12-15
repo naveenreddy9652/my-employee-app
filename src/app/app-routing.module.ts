@@ -24,6 +24,7 @@ import { NotifyGuard } from './notify.guard';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { VahicleDetailsComponent } from './vahicle-details/vahicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
+import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -50,8 +51,9 @@ const routes: Routes = [
    {path:"vahicle-details/:id", component:VahicleDetailsComponent},
    {path:'edit-vahicle/:id',component:CreateUserComponent},
    {path:'account-details/:id',component:AccountDetailsComponent},
-   {path:"edit-account/:id",component:CreateUserComponent}  
- 
+   {path:"edit-account/:id",component:CreateUserComponent}  ,
+   {path:"parent", component:ParentComponent}
+   
   ]},
   
   {path:'**', component:PageNotFoundComponent},

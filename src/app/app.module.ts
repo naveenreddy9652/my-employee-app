@@ -27,6 +27,8 @@ import { PricePipe } from './price.pipe';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { VahicleDetailsComponent } from './vahicle-details/vahicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
     UserDetailsComponent,
     VahicleDetailsComponent,
     AccountDetailsComponent,
+    ParentComponent,
+    ChildComponent,
     
     
   ],
