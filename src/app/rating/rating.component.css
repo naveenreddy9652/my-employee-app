@@ -1,0 +1,16 @@
+input{
+    display: none;
+}
+
+label{
+    font-weight: 700;
+    font-size: 25px;
+    margin-right: 20px;
+
+}
+
+span{
+    font-weight: bold;
+    color: yellow;
+}
+

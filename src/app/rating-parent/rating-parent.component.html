@@ -1,0 +1,19 @@
+<div>
+
+
+    <h1>Products</h1>
+    <div>
+        <img src="https://www.beyoung.in/api/cache/catalog/products/new_shirt_upload_21_10_2022/deep_olive_green_corduroy_shirt_for_men_base_3_11_2022_700x933.jpg"
+            alt="">
+        <p> 
+            Rating: &nbsp; 
+            <span id="img"><img *ngIf="rating == '1'" src="/assets/1starrating.jpg" alt="1"><img
+                    *ngIf=" rating == '2'" src="/assets/2starrating.jpg" alt="2"><img *ngIf=" rating == '3'"
+                    src="/assets/3starrating.jpg" alt="3"><img *ngIf=" rating == '4'" src="/assets/4starrating.jpg"
+                    alt="4"><img *ngIf=" rating == '5'" src="/assets/5starrating.jpg" alt="5">
+            </span>
+        </p>
+    </div>
+
+    <app-rating (bEvent)="catch($event)"></app-rating>
+</div>

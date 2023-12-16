@@ -25,6 +25,12 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { VahicleDetailsComponent } from './vahicle-details/vahicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { ParentComponent } from './parent/parent.component';
+import { ItemsComponent } from './items/items.component';
+import { CartComponent } from './cart/cart.component';
+import { NavComponent } from './nav/nav.component';
+import { RatingParentComponent } from './rating-parent/rating-parent.component';
+import { TextAreaParentComponent } from './text-area-parent/text-area-parent.component';
+import { AboutCompanyComponent } from './about/about-company/about-company.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -52,7 +58,13 @@ const routes: Routes = [
    {path:'edit-vahicle/:id',component:CreateUserComponent},
    {path:'account-details/:id',component:AccountDetailsComponent},
    {path:"edit-account/:id",component:CreateUserComponent}  ,
-   {path:"parent", component:ParentComponent}
+   {path:"parent", component:ParentComponent},
+   {path:'items', component:ItemsComponent},
+   {path:'cart', component: CartComponent},
+   {path:'nav',component:NavComponent},
+   {path:'rating',component:RatingParentComponent},
+   {path:'text-area',component:TextAreaParentComponent},
+   {path:'about-company', component: AboutCompanyComponent}
    
   ]},
   

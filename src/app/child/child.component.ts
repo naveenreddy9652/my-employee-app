@@ -15,6 +15,5 @@ export class ChildComponent {
     this.bEvent.emit(this.bc)
   }
 
-  // @Output() public bEvent: EventEmitter<any> = new EventEmitter();
 
 }

@@ -1,0 +1,7 @@
+<div>
+    <h1>Teaxt Area</h1>
+    <textarea name="" id="" cols="30" rows="10" maxlength="{{max}}"  [(ngModel)]="content" (keypress)="event()"></textarea>
+    <p>{{chars.length}} <span>/{{max}}</span></p>
+</div>
+
+<app-text-area (bEvent)="catch($event)"></app-text-area>

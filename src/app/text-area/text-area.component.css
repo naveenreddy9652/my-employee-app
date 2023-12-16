@@ -1,0 +1,17 @@
+div {
+    padding: 100px;
+}
+
+input{
+    padding: 5px;
+    outline: none;
+}
+
+button{
+    background-color: blue;
+    padding: 5px;
+    border: 0px;
+    border-radius: 3px;
+    margin-left: 10px;
+    color: white;
+}
